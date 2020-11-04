@@ -51,7 +51,9 @@ flutter:
   assets:
    - asset/400.jpg
    - asset/background/home_screen.jpg
+   - asset/background/logging.jpg
    - asset/Logo_Appetee.jpg
+   - asset/Logo_Appetee.png
    - asset/test.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

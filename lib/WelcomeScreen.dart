@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_app/allergieChoix.dart';
+import 'package:flutter_app/app2.dart';
+import 'package:flutter_app/personal_material.dart';
 
 class FirstRoute extends StatelessWidget {
+
+  bool _isInvisible = true;
+  double _opacity = 1.0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("asset/background/home_screen.jpg"), fit: BoxFit.cover)),
+                image: AssetImage("asset/background/home_screen.jpg"),
+                fit: BoxFit.cover)),
         child: _buildBody(context),
       ),
     );
@@ -43,8 +49,6 @@ class FirstRoute extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 72),
-
-                  //button
                   ElevatedButton(
                     child: Text(
                       'Commencer',
@@ -69,10 +73,12 @@ class FirstRoute extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MyApp2()),
+                        MaterialPageRoute(
+                            builder: (context) => VisibilityExample()),
                       );
                     },
                   ),
+              ElevatedButton(),
                 ],
               ),
             ),

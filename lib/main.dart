@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app2.dart';
 import 'package:flutter_app/allergieChoix.dart';
-import 'package:flutter_app/logingScreen.dart';
+import 'package:flutter_app/WelcomeScreen.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
