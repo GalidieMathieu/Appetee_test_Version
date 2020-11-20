@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_app/app2.dart';
-import 'package:flutter_app/personal_material.dart';
+import 'file:///C:/Users/Public/FlutterTest/flutter_app/lib/old/app2.dart';
+import 'file:///C:/Users/Public/FlutterTest/flutter_app/lib/old/personal_material.dart';
 
 class FirstRoute extends StatelessWidget {
 
@@ -74,7 +74,8 @@ class FirstRoute extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => VisibilityExample()),
+                            //builder: (context) => VisibilityExample()
+                          ),
                       );
                     },
                   ),

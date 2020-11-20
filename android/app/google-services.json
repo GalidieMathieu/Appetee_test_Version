@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "428793904337",
+    "firebase_url": "https://appetee-a9e97.firebaseio.com",
+    "project_id": "appetee-a9e97",
+    "storage_bucket": "appetee-a9e97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428793904337:android:1992f6dbd54f7bbcd899f0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428793904337-noro7d6p546p1cq1ui30r2ch2v58jehc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_app",
+            "certificate_hash": "df098134411a119a743404a8795432b2eadbb423"
+          }
+        },
+        {
+          "client_id": "428793904337-v6l89tp0pe483303cb1p2vl2pu80ku56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpqRuInC74LQZdL_mi4GmMvgkKyj128gw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428793904337-v6l89tp0pe483303cb1p2vl2pu80ku56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

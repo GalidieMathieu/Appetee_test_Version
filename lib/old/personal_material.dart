@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class PersonalMaterial {
+  static  var WIDTH;
+  static  var HEIGHT;
 
-  static Container rectangleOutsideShadow( var height , var width, double radius) {
+  static Container rectangleOutsideShadow( var height , var width, double radius, {double margin = 0.0}) {
     return Container(
+      width: width-2*margin,
       height: height,
-      width: width,
       decoration: BoxDecoration(
         color: Colors.white,
         shape: BoxShape.rectangle,
@@ -31,8 +33,9 @@ class PersonalMaterial {
   static Container rectangleInnerShadow( double height, double width)
   {
     return Container(
-      width: 200,
-      height: 200,
+      child : SizedBox.expand(
+
+      ),
 
       decoration: BoxDecoration(
           color: Colors.grey[300],
@@ -68,6 +71,27 @@ class PersonalMaterial {
           )
 
       ),
+    );
+  }
+
+  static BoxDecoration boxDecoration()
+  {
+    return BoxDecoration(
+      color: Colors.white,
+      shape: BoxShape.rectangle,
+      boxShadow: [
+        BoxShadow(
+            color: Colors.white,
+            offset: Offset(-4.0, -4.0),
+            blurRadius: 15.0,
+            spreadRadius: 1.0),
+        BoxShadow(
+            color: Colors.grey[600],
+            offset: Offset(4.0, 4.0),
+            blurRadius: 10.0,
+            spreadRadius: 1.0),
+      ],
+      borderRadius: BorderRadius.circular(30),
     );
   }
 }
