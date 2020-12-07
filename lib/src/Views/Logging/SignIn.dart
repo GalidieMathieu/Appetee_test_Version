@@ -1,33 +1,20 @@
 
 //1
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_app/src/Logging/Controller/LogController.dart';
+import 'package:flutter_app/src/Controller/LogController.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter_app/src/Views/HomeScreen/WelcomeScreen.dart';
 
-//3
-class MyApp5 extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Firebase Auth Demo',
-      home: MyHomePage(title: 'Firebase Auth Demo'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class SignIn extends StatefulWidget {
+  SignIn({Key key, this.title}) : super(key: key);
   final String title;
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _SignIn createState() => _SignIn();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-
+class _SignIn extends State<SignIn> {
 //4
   @override
   Widget build(BuildContext context) {
@@ -106,11 +93,19 @@ class _RegisterEmailSectionState extends StateMVC {
               alignment: Alignment.center,
               child: RaisedButton(
                 onPressed: () async {
-                  debugPrint('movieTitle: ${_con.success}');
                   if (_formKey.currentState.validate()) {
-                    debugPrint('ont est rentrée');
-                    _con.register(_passwordController, _emailController).catchError((message) {
-                      Fluttertoast.showToast(msg: message ,
+
+                    //connection a la dataBase
+                    _con.register(_passwordController, _emailController).then((isConnected) {
+                      //if log then downloadData
+                      if(isConnected)
+                        {
+                          Navigator
+                              .of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (BuildContext context) => HomeScreen()));
+                        }
+                    }).catchError((message) {
+                      Fluttertoast.showToast(msg: message,
                           toastLength: Toast.LENGTH_SHORT,
                           gravity: ToastGravity.CENTER);
                     });

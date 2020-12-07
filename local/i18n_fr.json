@@ -1,0 +1,15 @@
+{
+  "app_title": "Appetee",
+  "main_title": "Mon titre principal",
+
+//TODO
+  "AuthError"     : {
+    "EMAIL_ALREADY_EXISTS" : "Email a déja été utilisé par un autre utilisateur",
+    "INVALID_EMAIL" :"Votre adresse email ne semble pas valide",
+    "INVALID_PASSWORD": "mot de passe non valide",
+    "TOO_MANY_REQUESTS": "trop de tentative, veuillez ressayer plus tard",
+
+    "UNKNOWN_ERROR" : "une erreur inconu est apparu"
+  }
+
+}

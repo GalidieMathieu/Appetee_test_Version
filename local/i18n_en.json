@@ -1,0 +1,12 @@
+{
+  "app_title"     : "Appetee",
+  "main_title"    : "main title",
+
+  "AuthError"     : "Authentication error",
+  "EMAIL_ALREADY_EXISTS" : "Email is already in use by an existing user",
+  "INVALID_EMAIL" :"Your email address appears to be malformed.",
+  "INVALID_PASSWORD": "The provide passport is invalid",
+  "TOO_MANY_REQUESTS": "too many request, try later",
+
+  "UNKNOWN_ERROR" : "Unknown error appears"
+}
