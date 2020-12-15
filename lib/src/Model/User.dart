@@ -4,8 +4,9 @@
 ///Si il vient de se connecter pour la première fois, créer un profil Firebase et un Json
 
 class Profil {
-  //user identification
 
+  ///--------------------------user identification----------------------------------
+  //global information
   static String _name;
 
   static String get name => _name;
@@ -29,31 +30,81 @@ class Profil {
   static int get height => (_height != null) ? _height : -1;
 
 
-  //food information :
+  ///--------------------------food information----------------------------------
 
-  //loved food
-  static List<String> _lovedFood;
-  static List<String> get lovedFood =>_lovedFood;
-  static set lovedFood(List<String>foodName) { _lovedFood.addAll(foodName);}
-  static void addLovedFood(String foodName){_lovedFood.add(foodName);}
+
+  ///loved food
+  static Set<String> _lovedFood = new Set<String>();
+  static Set<String> get lovedFood =>_lovedFood;
+  static set lovedFood(Set<String>foodName) { _lovedFood.addAll(foodName);}
+  static void addLovedFood(String foodName){
+    if(_lovedFood != null)
+      {
+        _lovedFood.add(foodName);
+      }
+    else{_lovedFood = new Set<String>();
+      _lovedFood.add(foodName);}
+    }
   static void removeLovedFood(String foodName){_lovedFood.remove(foodName);}
   static void removeAllLovedFood(){_lovedFood = null;}
 
-  //hated food
-  static List<String> _hatedFood;
-  static List<String> get hatedFood => _hatedFood;
-  static set hatedFood(List<String>foodName) { _hatedFood.addAll(foodName);}
-  static void addHatedFood(String foodName){_hatedFood.add(foodName);}
+  ///hated food
+  static Set<String> _hatedFood  = new Set<String>();
+  static Set<String> get hatedFood => _hatedFood;
+  static set hatedFood(Set<String>foodName) { _hatedFood.addAll(foodName);}
+  static void addHatedFood(String foodName){
+    if(_hatedFood != null)
+    {
+      _hatedFood.add(foodName);
+    }
+    else{_hatedFood = new Set<String>();
+    _hatedFood.add(foodName);}
+  }
   static void removeHatedFood(String foodName){_hatedFood.remove(foodName);}
   static void removeAllHatedFood(){_hatedFood = null;}
 
-  //Allergy food
-  static List<String> _allergyFood;
-  static List<String> get allergyFood => _allergyFood;
-  static set allergyFood(List<String>foodName) { allergyFood.addAll(foodName);}
-  static void addAllergyFood(String foodName){allergyFood.add(foodName);}
-  static void removeAllergyFood(String foodName){allergyFood.remove(foodName);}
-  static void removeAllAllergyFood(){allergyFood = null;}
+  ///Allergy food
+  static Set<String> _allergyFood = new Set<String>();
+  static Set<String> get allergyFood => _allergyFood;
+  static set allergyFood(Set<String>foodName) { _allergyFood.addAll(foodName);}
+  static void addAllergyFood(String foodName){
+    if(_allergyFood != null)
+  {
+    _allergyFood.add(foodName);
+  }
+  else{_allergyFood = new Set<String>();
+  _allergyFood.add(foodName);}}
+  static void removeAllergyFood(String foodName){_allergyFood.remove(foodName);}
+  static void removeAllAllergyFood(){_allergyFood = null;}
+
+  ///Diet food
+  static String _diet;
+  static String get diet => _diet;
+
+  ///foodIntolerance
+  static Set<String> _intoleranceFood = new Set<String>();
+  static Set<String> get intoleranceFood => _intoleranceFood;
+  static set intoleranceFood(Set<String>foodName) { _intoleranceFood.addAll(foodName);}
+  static void addIntoleranceFood(String foodName){if(_intoleranceFood != null)
+  {
+    _intoleranceFood.add(foodName);
+  }
+  else{_intoleranceFood = new Set<String>();
+  _intoleranceFood.add(foodName);}}
+  static void removeIntoleranceFood(String foodName){_intoleranceFood.remove(foodName);}
+  static void removeALLIntoleranceFood(){_intoleranceFood = null;}
+
+  ///convert a Set to a map for RealTimeDataBase
+  static Map foodToJson(Set<String> listFood){
+    var count = 0;
+    var map = new Map();
+    for(var food in  listFood)
+      {
+        map[count.toString()] = food;
+        count++;
+      }
+   return map;
+  }
 
 
 
@@ -65,4 +116,5 @@ class Profil {
     //requestDataFireBase
     //updateUserInformation
   }
+
 }

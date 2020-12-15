@@ -34,6 +34,8 @@ dependencies:
   google_fonts: ^1.1.1
   firebase_auth: ^0.18.3
   firebase_storage: ^5.0.1
+  firebase_database: ^4.4.0
+  firebase_core: ^0.5.3
 
   firebase_dynamic_links: ^0.5.1
   mvc_pattern: ^6.6.0

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/Views/CreationProfil/HatedFood.dart';
 import 'package:flutter_app/src/Views/Logging/SignIn.dart';
 import 'package:flutter_app/src/Views/HomeScreen/LoadingScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
           return (_firebaseAuth.currentUser != null)
-              ? LoadingScreen()
+              ? HatedFood()//LoadingScreen()
               : SignIn();
         }
 

@@ -1,6 +1,6 @@
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:flutter_app/src/Model/User.dart';
-import 'package:flutter_app/ExceptionHandler.dart' show AuthExceptionAppetee;
+import 'file:///C:/Users/Public/FlutterTest/flutter_app/lib/Utils/ExceptionHandler.dart' show AuthExceptionAppetee;
 import 'package:firebase_auth/firebase_auth.dart';
 
 final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -62,14 +62,15 @@ class LogController extends ControllerMVC {
 
     if (errorMessage != null)
     {
-      return Future.error(errorMessage);
+      Future.error(errorMessage);
 
     }
 
     if (user != null) {
       Profil.createUserFromDataBase(user.email);
+      return true;
     }
-    return true;
+    return false;
   }
 
 }

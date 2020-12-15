@@ -2,6 +2,7 @@
 //1
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/Controller/LogController.dart';
+import 'package:flutter_app/src/Views/CreationProfil/HatedFood.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:flutter_app/src/Views/HomeScreen/WelcomeScreen.dart';
@@ -102,7 +103,7 @@ class _RegisterEmailSectionState extends StateMVC {
                         {
                           Navigator
                               .of(context)
-                              .pushReplacement(MaterialPageRoute(builder: (BuildContext context) => HomeScreen()));
+                              .pushReplacement(MaterialPageRoute(builder: (BuildContext context) => HatedFood()));
                         }
                     }).catchError((message) {
                       Fluttertoast.showToast(msg: message,

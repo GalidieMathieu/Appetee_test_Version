@@ -4,7 +4,7 @@
 class Image{
 
   //items pour l'affichage
-  static var _items = [
+  static var _imagesAllergy = [
     'asset/foodImages/400.jpg',
     'asset/foodImages/400.jpg',
     'asset/foodImages/400.jpg',
@@ -21,24 +21,26 @@ class Image{
     'asset/foodImages/400.jpg',
     'asset/foodImages/400.jpg',
   ];
+  static List<String> get imagesAllergy => _imagesAllergy;
 
   //items pour la récupérations de donnée
-  static var _nomsItems = [
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
-    '400',
+  static var _nomsAllergy = [
+    'moules',
+    'saumon',
+    'patate',
+    'carottes',
+    'tomates',
+    'jambon',
+    'chèvre',
+    'riz',
+    'fillet migion',
+    'radis',
+    'porc',
+    'poulet',
+    'aubergine',
+    'cabillaud',
+    'mangue',
   ];
+  static List<String> get nomsAllergy => _nomsAllergy;
 
 }
