@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Utils/Style.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoadingScreen extends StatelessWidget {
@@ -55,16 +56,7 @@ class LoadingScreen extends StatelessWidget {
                             height: 1),
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.redAccent,
-                      padding:
-                      EdgeInsets.symmetric(horizontal: 40, vertical: 28),
-                      textStyle: TextStyle(fontSize: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                      side: BorderSide(color: Colors.white, width: 8),
-                    ),
+                    style: CustomButtonTheme.redButton(),
                     onPressed: () {
                       Navigator.push(
                         context,

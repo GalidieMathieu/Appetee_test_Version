@@ -20,14 +20,31 @@ class ProfilCreationController extends ControllerMVC {
 
   static ProfilCreationController get con => _this;
 
-  static List<String> _hatedFood = Image.nomsAllergy;
+  static List<String> _hatedFood = FoodName.listHated;
 
   static  List<String> get hatedFood =>_hatedFood;
 
 
-  List<String> getImagesAllergy() => Image.imagesAllergy;
-  List<String> getNomsAllergy() => Image.nomsAllergy;
+  List<String> getImagesAllergy() => FoodName.imagesAllergy;
+  List<String> getNomsAllergy() => FoodName.listHated;
 
+  String _wordSearched = "";
+  void updateSearch(String wordSearched){
+    setState(() {
+      _wordSearched = wordSearched;
+    });
+  }
+
+  List<String> listHatedFoodSearched(){
+    if(_wordSearched != "")
+      {
+        return FoodName.listHated.where((f) => f.startsWith(_wordSearched)).toList();
+      }
+    else
+      {
+      return FoodName.listHated;
+      }
+  }
   ///Permet de modifier les items selectionés concernant les choix alimentaires
 
   //Modifie la selection des aliments aimés
@@ -45,40 +62,41 @@ class ProfilCreationController extends ControllerMVC {
     });
   }
 
-  String afficherLovedFood() {
+  String afficherHatedFood() {
     String result = "";
-    if(Profil.lovedFood!=null)
+    if(Profil.hatedFood!=null)
       {
-        for(String food in Profil.lovedFood)
+        for(String food in Profil.hatedFood)
           {
             result += food + " ";
           }
       }
-
     return result;
   }
 
   //Finalisation de la creation d'un profil ajout de la dataBase
-  Future<void> creationProfil()  async {
-
+  Future<bool> creationProfil() async {
     String errorMessage;
     if(_firebaseAuth.currentUser != null)
       {
-        DatabaseReference user = _dbRef.child(_firebaseAuth.currentUser.uid);
+        DatabaseReference user = _dbRef.child(_firebaseAuth.currentUser.uid).child("foodInformation");
         try {
           await user.child("hatedFood").set(Profil.foodToJson(Profil.hatedFood));
-          await user.child("diet").set(Profil.foodToJson(Profil.lovedFood));
-          await user.child("allergy").set(Profil.foodToJson(Profil.lovedFood));
-          await user.child("foodIntolerance").set(Profil.foodToJson(Profil.lovedFood));
-
-
+          await user.update({'diet': Profil.diet});
+          await user.child("allergy").set(Profil.foodToJson(Profil.allergyFood));
+          await user.child("foodIntolerance").set(Profil.foodToJson(Profil.intoleranceFood));
         } catch (error) {errorMessage = error.code;}
 
         if (errorMessage != null)
         {
           Future.error(errorMessage);
+          return false;
         }
-      }else{Future.error("NoUser");}
+      }else{
+      Future.error("NoUser");
+      return false;
+    }
+    return true;
   }
 
 }

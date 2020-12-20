@@ -1,4 +1,4 @@
-//librairie avec toutes les enums
+//all enum needed
 
 
-enum TypeSelection { ALLERGY, DIET, HATED }
+enum TypeSelection { ALLERGY, DIET, INTOLERANCE, HATED }

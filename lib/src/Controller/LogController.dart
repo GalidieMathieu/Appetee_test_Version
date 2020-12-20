@@ -25,6 +25,7 @@ class LogController extends ControllerMVC {
   String getEmail() => Profil.email;
 
 
+
   ///register an user with password and email
   Future<bool> register(var password, var email) async {
     String errorMessage;

@@ -6,7 +6,7 @@
 class Profil {
 
   ///--------------------------user identification----------------------------------
-  //global information
+  ///global information
   static String _name;
 
   static String get name => _name;
@@ -19,7 +19,7 @@ class Profil {
 
   static String get email => _email;
 
-  //user information personnel
+  ///user information personnel
   static int _idVersion;
   static int get idVersion => _idVersion;
 
@@ -31,12 +31,12 @@ class Profil {
 
 
   ///--------------------------food information----------------------------------
-
-
   ///loved food
   static Set<String> _lovedFood = new Set<String>();
   static Set<String> get lovedFood =>_lovedFood;
-  static set lovedFood(Set<String>foodName) { _lovedFood.addAll(foodName);}
+  static set lovedFood(Set<String>foodName) {
+    _lovedFood.clear();
+    _lovedFood.addAll(foodName);}
   static void addLovedFood(String foodName){
     if(_lovedFood != null)
       {
@@ -51,7 +51,9 @@ class Profil {
   ///hated food
   static Set<String> _hatedFood  = new Set<String>();
   static Set<String> get hatedFood => _hatedFood;
-  static set hatedFood(Set<String>foodName) { _hatedFood.addAll(foodName);}
+  static set hatedFood(Set<String>foodName) {
+    _hatedFood.clear();
+    _hatedFood.addAll(foodName);}
   static void addHatedFood(String foodName){
     if(_hatedFood != null)
     {
@@ -66,7 +68,9 @@ class Profil {
   ///Allergy food
   static Set<String> _allergyFood = new Set<String>();
   static Set<String> get allergyFood => _allergyFood;
-  static set allergyFood(Set<String>foodName) { _allergyFood.addAll(foodName);}
+  static set allergyFood(Set<String>foodName) {
+    _allergyFood.clear();
+    _allergyFood.addAll(foodName);}
   static void addAllergyFood(String foodName){
     if(_allergyFood != null)
   {
@@ -78,13 +82,14 @@ class Profil {
   static void removeAllAllergyFood(){_allergyFood = null;}
 
   ///Diet food
-  static String _diet;
-  static String get diet => _diet;
+  static String diet = "";
 
   ///foodIntolerance
   static Set<String> _intoleranceFood = new Set<String>();
   static Set<String> get intoleranceFood => _intoleranceFood;
-  static set intoleranceFood(Set<String>foodName) { _intoleranceFood.addAll(foodName);}
+  static set intoleranceFood(Set<String>foodName) {
+    _intoleranceFood.clear();
+    _intoleranceFood.addAll(foodName);}
   static void addIntoleranceFood(String foodName){if(_intoleranceFood != null)
   {
     _intoleranceFood.add(foodName);

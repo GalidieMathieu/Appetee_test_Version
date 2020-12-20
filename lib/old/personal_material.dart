@@ -36,7 +36,6 @@ class PersonalMaterial {
       child : SizedBox.expand(
 
       ),
-
       decoration: BoxDecoration(
           color: Colors.grey[300],
           shape: BoxShape.circle,
